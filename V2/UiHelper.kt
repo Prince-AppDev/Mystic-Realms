@@ -1,5 +1,4 @@
-
-
+// Game Ui code 
 fun drawHpBar(current : Int, max : Int ): String {
     val block = "\u2588"
     val shade = "\u2591"
