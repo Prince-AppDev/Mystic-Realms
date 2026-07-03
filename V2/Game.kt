@@ -1,5 +1,4 @@
-
-
+// main game logic
 enum class ItemType
 {
     HEALING ,
