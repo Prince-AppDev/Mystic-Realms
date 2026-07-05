@@ -35,16 +35,14 @@ while learning Kotlin concepts step by step.
 
 ## 🚀 How to Run
 
-### IntelliJ IDEA
-1. Download files from V1 or V2 folder
-2. New Project → Kotlin in IntelliJ IDEA
-3. Paste files in src folder
-4. Run Main.kt ▶️
+**Recommended:** Run this project in IntelliJ IDEA or Android Studio rather than Kotlin Playground.
 
-### Kotlin Playground (No Installation)
-1. Go to play.kotlinlang.org
-2. Paste Main.kt code
-3. Click Run ▶️
+1. Copy all `.kt` files from the `V1` folder into your IntelliJ IDEA or Android Studio project.
+2. Open `Main.kt`.
+3. Click the Run button (▶️) or use the shortcut `Shift + F10` (Windows/Linux) / `Ctrl + R` (Mac).
+4. Follow the prompts in the console and provide your input as requested.
+
+> ⚠️ **Note:** Kotlin Playground (the web-based editor) does not reliably support `readLine()` due to input timing issues, which can cause the program to crash or enter an infinite loop. For a stable experience, please run this project in IntelliJ IDEA or Android Studio.
 
 ---
 
