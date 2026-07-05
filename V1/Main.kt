@@ -47,12 +47,21 @@ data class Player(
     }
 
     fun askPlayerName() : String {
-        println("                  What is your name adventurer?        ")
-        val name = readLine()?:"Unknown"
-        return name
-    }
+        var name: String
+        while (true) {
+            println("What is your name adventurer ? ")
+            name = readlnOrNull() ?:""
+            if (name.isBlank()) {
+                println("⚠️ Please Enter Your Name First ")
+            }
+                else {
+                    break
+                }
+            }
+            return name
+        }
 
-    fun showWelcome(name: String) {
+fun showWelcome(name: String) {
         println()
         println("                  Welcome to Eldoria , $name !")
         println("                Your Journey is about to begin.")
@@ -74,28 +83,46 @@ fun showLocations()
 {
     println()
     println("                  ====WHERE DO YOU WANT TO EXPLORE 🗺️===")
-    println("1. Dark Forest ")
-    println("2. Skeleton Cave ")
-    println("3. Haunted Ruins")
-    println("4. Zombie Village ")
+    println("1. Dark Forest🌳")
+    println("2. Skeleton Cave💀 ")
+    println("3. Haunted Ruins👻")
+    println("4. Zombie Village🧟‍♂️ ")
     println()
     println("Enter Your Choice(1-4):")
 }
-fun chooseLocation() : Location
-{
-    val choice = readLine()?:"1"
-    return when (choice) {
-        "1" -> Location.DARK_FOREST
-        "2" -> Location.SKELETON_CAVE
-        "3" -> Location.HAUNTED_RUINS
-        "4" -> Location.ZOMBIE_VILLAGE
-        else -> {
-            println("Invalid choice ! Going to the DARK FOREST")
-            Location.DARK_FOREST
+fun chooseLocation(): Location {
+    var location: Location
+
+    while (true) {
+        showLocations()
+        val choice = readLine()?.trim()
+
+        when (choice) {
+            "1" -> {
+                location = Location.DARK_FOREST
+                break
+            }
+            "2" -> {
+                location = Location.SKELETON_CAVE
+                break
+            }
+            "3" -> {
+                location = Location.HAUNTED_RUINS
+                break
+            }
+            "4" -> {
+
+                location = Location.ZOMBIE_VILLAGE
+                break
+            }
+            else -> {
+                println("⚠ Invalid choice! Please enter a valid choice(1-4)")
+            }
         }
     }
-}
 
+    return location
+}
 fun spawnMonster(location: Location) : Monster
 {
     return when(location)
@@ -164,46 +191,64 @@ fun monsterAttack(monster: Monster , player: Player) :Player
     println("  Your HP : ${updatedPlayer.health}/${updatedPlayer.maxHealth}")
     return updatedPlayer
 }
-fun combatLoop(player: Player , monster: Monster) :Player {
+fun combatLoop(player: Player, monster: Monster): Player {
     var currentPlayer = player
     var monsterHealth = monster.health
-    while (currentPlayer.health >0 && monsterHealth > 0)
-   {
-        showCombatOptions()
-        val choice = readLine() ?: "1"
-        val damage = when (choice) {
+    while(monsterHealth>0&&currentPlayer.health>0) {
+        var damage: Int
 
-            "1" -> playerAttack("⚔️Attack") { currentPlayer.attackPower }
-            "2" -> playerAttack("🔥Fireball") { 25 }
-            "3" -> playerAttack("⚡Lighting") { 20 }
-            "4" -> {
-                print("You use a Potion Healed 50 HP")
-                currentPlayer = currentPlayer.copy(
-                    health = (currentPlayer.health + 50)
-                        .coerceAtMost(currentPlayer.maxHealth)
-                )
-                0
-            }
+        while (true) {
+            showCombatOptions()
+            val choice = readLine()?.trim()
 
-            else -> {
-                print("Invalid Choice!")
-                0
+            when (choice) {
+                "1" -> {
+                    damage = playerAttack(attackType = "⚔ Attack") { currentPlayer.attackPower }
+                    break
+                }
+
+                "2" -> {
+                    damage = playerAttack(attackType = "🔥 Fireball") { 25 }
+                    break
+                }
+
+                "3" -> {
+                    damage = playerAttack(attackType = "⚡ Lightning") { 20 }
+                    break
+                }
+
+                "4" -> {
+                    print("You use a Potion! Healed 50 HP")
+                    currentPlayer = currentPlayer.copy(
+                        health = (currentPlayer.health + 50)
+                            .coerceAtMost(maximumValue = currentPlayer.maxHealth)
+                    )
+                    damage = 0
+                    break
+                }
+
+                else -> {
+                    println("⚠ Invalid Choice! Enter (1-4)")
+                }
             }
         }
 
+
         monsterHealth -= damage
+
         if (monsterHealth <= 0) {
             println()
             print("Congratulation 🎉 You defeated ${monster.name}!")
-            print("You earned 🪙 ${monster.reward} XP.")
+            print("You earned ${monster.reward} XP.")
             currentPlayer = currentPlayer.copy(
-                experience = currentPlayer.experience + monster.reward)
+                experience = currentPlayer.experience + monster.reward
+            )
         } else {
             currentPlayer = monsterAttack(monster, currentPlayer)
         }
     }
-        return currentPlayer
-    }
+    return currentPlayer
+}
 
 fun main() {
     do {
@@ -218,7 +263,6 @@ fun main() {
         println()
         println("             PLAYER STATS = HP : ${player.health} | Attack : ${player.attackPower} | Level : ${player.level}")
 
-        showLocations()
         val chosenLocation = chooseLocation()
         println("                You Choose To Explore : $chosenLocation")
         println()
