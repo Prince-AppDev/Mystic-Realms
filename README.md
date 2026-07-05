@@ -11,7 +11,7 @@
 
 ## 👨‍💻 About
 
-Hi! I'm Krishna, a final year student
+Hi! I'm Prince, a final year student
 passionate about Android development.
 This project is part of my Kotlin learning
 journey before moving to Android Studio
