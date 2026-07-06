@@ -162,7 +162,7 @@ fun spawnMonster(location: Location) : Monster
 fun showCombatOptions(player: Player)
 {
     println()
-    println("  ════════ Your Turn════════")
+    println("  ════════ Your Turn ════════")
     println("1.⚔️Sword")
     println("2.🔥Fireball")
     println("3. ⚡Lighting")
@@ -332,7 +332,7 @@ fun checkLevelUp(player: Player):Player {
                 }
 
                 else -> {
-                    println("Invalid choice ❌")
+                    println("Invalid choice ❌ Please Enter (1-4) only ")
                     0
                 }
             }
