@@ -69,8 +69,19 @@ fun showIntro() {
 }
 
 fun askPlayerName() : String {
-    println("                  What is your name adventurer?        ")
-    val name = readLine()?:"Unknown"
+    var name: String
+    while (true) {
+        println("              What is your name adventurer ? ")
+
+        name = readlnOrNull() ?:""
+        if (name.isBlank()) {
+            println("⚠️ Please Enter Your Name First ")
+            println()
+        }
+        else {
+            break
+        }
+    }
     return name
 }
 
