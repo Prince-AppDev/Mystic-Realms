@@ -56,6 +56,7 @@ while learning Kotlin concepts step by step.
 3. In combat, pick your attack (1-4)
 4. Defeat monsters, gain XP, level up!
 5. Game ends when your HP reaches 0
+   ---
 ## 📁 Versions
 
 ### V1 — Base Version
@@ -132,6 +133,16 @@ V2/
 - 😊 Difficulty levels
 - 💥 Limited special attacks
 - 🤝 NPC characters
+  ---
+  ## 🆘 Troubleshooting
+
+**Game crashes when I run it**
+- Use IntelliJ IDEA, not Kotlin Playground
+- Make sure you're running V2/Main.kt
+
+**Game asks for input but nothing happens**
+- The game needs keyboard input
+- Check your IntelliJ console is active
 
 ## 👨‍💻 Author
 
@@ -150,6 +161,6 @@ Final Year Student | Android Developer in Progress 🚀
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Prince-AppDev)
 
 
-<p align="center"><i>⭐️ "Consistency beats intensity — one commit at a time."</i></p>
+
 
 
