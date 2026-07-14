@@ -23,16 +23,18 @@ game systems — built completely from scratch
 while learning Kotlin concepts step by step.
 
 ---
-## 📸 Screenshots
+## 📸 Game Features
+| Feature | Screenshot |
+|---------|-----------|
+| **Story Intro** | ![Story](V2/Assets/story.png) |
+| **Game Start** | ![Intro](V2/Assets/Intro.png) |
+| **Location Exploration** | ![Location](V2/Assets/ExploreLocation.png) |
+| **Inventory System** | ![Inventory](V2/Assets/Inventory.png) |
+| **Character Stats** | ![Stats](V2/Assets/CurrentStats.png) |
+| **Combat System** | ![Combat](V2/Assets/AttackTypes.png) |
+| **Game Ending** | ![Ending](V2/Assets/GameOver.png) |
 
-![Story](V2/Assets/story.png)
-![Intro](V2/Assets/Intro.png)
-![Location](V2/Assets/ExploreLocation.png)
-![Inventory](V2/Assets/Inventory.png)
-![CurrentStats](V2/Assets/CurrentStats.png)
-![attacks](V2/Assets/AttackTypes.png)
-![Ending](V2/Assets/GameOver.png)
-
+---
 ## 🚀 How to Run
 
 **Recommended:** Run this project in IntelliJ IDEA or Android Studio rather than Kotlin Playground.
