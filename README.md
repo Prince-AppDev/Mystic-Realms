@@ -45,7 +45,17 @@ while learning Kotlin concepts step by step.
 > ⚠️ **Note:** Kotlin Playground (the web-based editor) does not reliably support `readLine()` due to input timing issues, which can cause the program to crash or enter an infinite loop. For a stable experience, please run this project in IntelliJ IDEA or Android Studio.
 
 ---
+## 🎮 Gameplay Guide
 
+**How to Play:**
+1. Start the game and enter your character name
+2. Choose your action:
+   - **1:** Explore a location
+   - **2:** Check your stats
+   - **3:** View inventory
+3. In combat, pick your attack (1-4)
+4. Defeat monsters, gain XP, level up!
+5. Game ends when your HP reaches 0
 ## 📁 Versions
 
 ### V1 — Base Version
