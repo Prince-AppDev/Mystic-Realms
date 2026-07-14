@@ -47,6 +47,18 @@ while learning Kotlin concepts step by step.
 > ⚠️ **Note:** Kotlin Playground (the web-based editor) does not reliably support `readLine()` due to input timing issues, which can cause the program to crash or enter an infinite loop. For a stable experience, please run this project in IntelliJ IDEA or Android Studio.
 
 ---
+## 📋 Prerequisites
+- Kotlin 1.9+ 
+- Java 11+ installed
+- IntelliJ IDEA or Android Studio (latest)
+
+## 🔧 Installation
+1. Clone the repository: `git clone https://github.com/Prince-AppDev/Mystic-Realms.git`
+2. Open in IntelliJ IDEA
+3. Navigate to `V2/Main.kt`
+4. Click Run or press Shift + F10
+
+ ---
 ## 🎮 Gameplay Guide
 
 **How to Play:**
@@ -58,6 +70,7 @@ while learning Kotlin concepts step by step.
 3. In combat, pick your attack (1-4)
 4. Defeat monsters, gain XP, level up!
 5. Game ends when your HP reaches 0
+ 
    ---
 ## 📁 Versions
 
@@ -135,16 +148,17 @@ V2/
 - 😊 Difficulty levels
 - 💥 Limited special attacks
 - 🤝 NPC characters
+  
   ---
   ## 🆘 Troubleshooting
 
-**Game crashes when I run it**
-- Use IntelliJ IDEA, not Kotlin Playground
-- Make sure you're running V2/Main.kt
+   **Game crashes when I run it**
+   - Use IntelliJ IDEA, not Kotlin Playground
+   - Make sure you're running V2/Main.kt
 
-**Game asks for input but nothing happens**
-- The game needs keyboard input
-- Check your IntelliJ console is active
+   **Game asks for input but nothing happens**
+   - The game needs keyboard input
+   - Check your IntelliJ console is active
 
 ## 👨‍💻 Author
 
